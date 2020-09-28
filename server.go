@@ -15,7 +15,8 @@ import (
 )
 
 // NewServer returns a server instance with HTTP/2.0 and HTTP/2.0 cleartext support
-// If this function cannot open or create the secret log file, **it still returns server instance** but without the secret log and error indication
+// If this function cannot open or create the secret log file,
+// **it still returns server instance** but without the secret log and error indication
 func NewServer(bindAddr string, preMasterSecretLogPath string, handler http.Handler) (server *http.Server, err error) {
 	if handler == nil {
 		return nil, errors.New("server needs handler to handle request")
